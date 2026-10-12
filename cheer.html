@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&display=swap"><link rel="stylesheet" href="site.css">
+<title>You got a cheer · Tap Water</title>
+<meta name="description" content="A friend sent you a hydration cheer on Tap Water.">
+<style>
+.cheer-page{display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:24px 64px;text-align:center}
+.cheer-card{width:320px;max-width:100%;aspect-ratio:1;border-radius:32px;background:linear-gradient(160deg,var(--main),var(--pop));color:var(--deep);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.cheer-card::before{content:"";position:absolute;width:112px;height:112px;border-radius:50%;background:#fff;opacity:.25;right:-36px;top:-32px}
+.cheer-card .kicker{font:700 14px var(--body);letter-spacing:1px;text-transform:uppercase}
+.cheer-card .big{font-size:72px;line-height:1}
+.cheer-card .msg{font:600 28px/1.2 var(--display)}
+.cheer-card .wm{font-size:20px;color:var(--deep);background:rgba(255,255,255,.55);border-radius:14px;padding:6px 14px}
+.cheer-card .wm svg path{fill:#2E9BE0}
+</style>
+</head><body>
+<header class="top wrap"><a class="wm" href="./" aria-label="tapwater home">tap<span class="lt">water</span><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg></a><nav><a href="./#features">Features</a><a href="./#stickers">Stickers</a><a href="support.html">Help</a></nav></header>
+<main class="wrap cheer-page">
+  <div class="cheer-card">
+    <span class="kicker" id="kicker">A cheer for you</span>
+    <span class="big" id="emoji">💪</span>
+    <span class="msg" id="msg">You've got this!</span>
+    <span class="wm">tap<span class="lt">water</span><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg></span>
+  </div>
+  <a class="btn" id="open">Open in Tap Water</a>
+  <p class="small">Don't have Tap Water yet? It's the water tracker where logging takes one tap. <a href="./">See the app</a></p>
+</main>
+<footer class="wrap"><span>© 2026 Tap Water. One tap. One sip.</span><nav><a href="privacy.html">Privacy</a><a href="support.html">Help</a><a href="./#stickers">Sticker shop</a></nav></footer>
+<script>
+// Must match CHEERS in the app (src/lib/cheers.ts).
+var EMOJI = { 'got-this': '💪', race: '🏁', sip: '💧', proud: '🥹', glow: '✨', besties: '💖' };
+var q = new URLSearchParams(location.search);
+var c = q.get('c') || 'got-this', t = (q.get('t') || '').slice(0, 80), from = (q.get('from') || '').slice(0, 20);
+document.getElementById('emoji').textContent = EMOJI[c] || '💪';
+if (t) document.getElementById('msg').textContent = t;
+if (from) document.getElementById('kicker').textContent = 'A cheer from ' + from;
+var app = 'tapwater://cheer?' + q.toString();
+document.getElementById('open').href = app;
+// Try opening the app straight away on phones; the page stays if it isn't installed.
+if (/Android|iPhone|iPad/i.test(navigator.userAgent)) location.href = app;
+</script>
+</body></html>
