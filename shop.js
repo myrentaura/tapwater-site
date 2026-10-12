@@ -20,7 +20,8 @@ var APP_STORE_URL = '';
       '<span style="background:' + p.main + '">💧</span><span style="background:#fff">📲</span><span style="background:' + p.pop + '">✨</span></div>' +
       '<h3></h3><p></p>' +
       '<div class="price">' + (p.price || 'Coming soon') + '</div>' +
-      '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>';
+      '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>' +
+      '<p class="gives">$1 from every pack goes to DigDeep. <a href="giving.html">See our receipts.</a></p>';
     card.querySelector('h3').textContent = p.name;
     card.querySelector('p').textContent = p.blurb;
     shop.appendChild(card);

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&display=swap"><link rel="stylesheet" href="site.css">
+<title>Giving · Tap Water</title>
+<meta name="description" content="$1 from every Tap Water sticker pack goes to DigDeep. See the total and our receipts.">
+</head><body>
+<header class="top wrap"><a class="wm" href="./" aria-label="tapwater home">tap<span class="lt">water</span><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg></a><nav><a href="./#features">Features</a><a href="./#stickers">Stickers</a><a href="support.html">Help</a></nav></header>
+<main class="wrap giving-page">
+  <h1>Tap, don't toss.</h1>
+  <p>$1 from every Tap Water sticker pack goes to <a href="https://www.digdeep.org">DigDeep</a>, a nonprofit working to bring clean running water to every home in the US.</p>
+  <p class="small">So far our sticker packs have given</p>
+  <div class="giving-total" id="total">$0</div>
+  <p class="small" id="detail">Our first donation goes out after the first sticker orders ship.</p>
+  <h2>Receipts</h2>
+  <ul class="receipts" id="receipts"><li><span>No donations yet</span><span></span></li></ul>
+  <p class="small">We donate every quarter and post each receipt here. The Tap Water app counts plastic bottles you skip on your phone; those numbers are estimates and never leave your phone.</p>
+  <a class="btn" href="./#stickers">Shop bottle stickers</a>
+</main>
+<footer class="wrap"><span>© 2026 Tap Water. One tap. One sip.</span><nav><a href="privacy.html">Privacy</a><a href="support.html">Help</a><a href="./#stickers">Sticker shop</a></nav></footer>
+<script>
+fetch('giving.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (g) {
+  document.getElementById('total').textContent = '$' + Number(g.totalUsd).toLocaleString();
+  if (g.packs > 0) document.getElementById('detail').textContent = 'From ' + Number(g.packs).toLocaleString() + ' sticker packs. Updated ' + g.updated + '.';
+  if (g.receipts && g.receipts.length) {
+    var ul = document.getElementById('receipts');
+    ul.innerHTML = '';
+    g.receipts.slice().reverse().forEach(function (x) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = x.url; a.textContent = 'Receipt';
+      var s = document.createElement('span');
+      s.textContent = x.date + ' · $' + Number(x.amountUsd).toLocaleString();
+      li.appendChild(s); li.appendChild(a); ul.appendChild(li);
+    });
+  }
+}).catch(function () {});
+</script>
+</body></html>

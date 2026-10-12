@@ -66,3 +66,9 @@ section{padding:48px 0}
 .prose ul{padding-left:22px}
 footer{border-top:1px solid var(--line);padding-block:28px 48px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:15px;color:var(--muted)}
 footer nav{font-weight:600}
+
+.pack .gives{font-size:13px;margin:10px 0 0;opacity:.8}
+.giving-page{display:flex;flex-direction:column;align-items:center;gap:16px;padding-block:32px 64px;text-align:center}
+.giving-total{font:900 64px/1 'DM Sans',sans-serif;color:var(--deep);background:linear-gradient(160deg,var(--main),var(--pop));border-radius:28px;padding:24px 36px}
+.receipts{list-style:none;padding:0;margin:0;width:100%;max-width:480px;text-align:left}
+.receipts li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--border,rgba(0,0,0,.1))}
