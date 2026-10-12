@@ -5,8 +5,9 @@ var PACKS = [
   { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', price: '', link: '' },
   { name: 'Mix pack', blurb: 'One in each of 3 colorways', main: '#CDBDF2', pop: '#FFC98F', price: '', link: '' },
 ];
-// The Google Play listing, once the app is live.
+// The store listings, once the app is live.
 var PLAY_URL = '';
+var APP_STORE_URL = '';
 
 (function () {
   var shop = document.getElementById('shop');
@@ -25,9 +26,11 @@ var PLAY_URL = '';
     shop.appendChild(card);
   });
   var get = document.getElementById('get');
-  if (get && PLAY_URL) {
-    get.href = PLAY_URL;
+  var iphone = /iPhone|iPad/i.test(navigator.userAgent);
+  var store = iphone ? APP_STORE_URL : PLAY_URL;
+  if (get && store) {
+    get.href = store;
     get.removeAttribute('aria-disabled');
-    get.textContent = 'Get it on Google Play';
+    get.textContent = iphone ? 'Download on the App Store' : 'Get it on Google Play';
   }
 })();
