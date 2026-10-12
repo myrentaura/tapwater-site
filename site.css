@@ -70,5 +70,7 @@ footer nav{font-weight:600}
 .pack .gives{font-size:13px;margin:10px 0 0;opacity:.8}
 .giving-page{display:flex;flex-direction:column;align-items:center;gap:16px;padding-block:32px 64px;text-align:center}
 .giving-total{font:900 64px/1 'DM Sans',sans-serif;color:var(--deep);background:linear-gradient(160deg,var(--main),var(--pop));border-radius:28px;padding:24px 36px}
-.receipts{list-style:none;padding:0;margin:0;width:100%;max-width:480px;text-align:left}
-.receipts li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--border,rgba(0,0,0,.1))}
+.table-wrap{width:100%;max-width:720px;overflow-x:auto}
+.receipts{width:100%;border-collapse:collapse;text-align:left;font-size:15px}
+.receipts th,.receipts td{padding:10px 8px;border-bottom:1px solid rgba(0,0,0,.1);white-space:nowrap}
+.receipts th{font-size:13px;opacity:.75}

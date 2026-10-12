@@ -5,33 +5,49 @@
 </head><body>
 <header class="top wrap"><a class="wm" href="./" aria-label="tapwater home">tap<span class="lt">water</span><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg></a><nav><a href="./#features">Features</a><a href="./#stickers">Stickers</a><a href="support.html">Help</a></nav></header>
 <main class="wrap giving-page">
-  <h1>Tap, don't toss.</h1>
-  <p>$1 from every Tap Water sticker pack goes to <a href="https://www.digdeep.org">DigDeep</a>, a nonprofit working to bring clean running water to every home in the US.</p>
-  <p class="small">So far our sticker packs have given</p>
-  <div class="giving-total" id="total">$0</div>
-  <p class="small" id="detail">Our first donation goes out after the first sticker orders ship.</p>
-  <h2>Receipts</h2>
-  <ul class="receipts" id="receipts"><li><span>No donations yet</span><span></span></li></ul>
-  <p class="small">We donate every quarter and post each receipt here. The Tap Water app counts plastic bottles you skip on your phone; those numbers are estimates and never leave your phone.</p>
+  <h1>Our giving record</h1>
+  <p>$1 from every Tap Water sticker pack goes to <a href="https://www.digdeep.org">DigDeep</a>, a nonprofit working to bring clean running water to every home in the US. We donate once a quarter and post every donation here, with its receipt.</p>
+  <div class="giving-total" id="total">$1 a pack</div>
+  <p class="small" id="detail">First donation: April 2027.</p>
+  <div class="table-wrap" id="table" hidden>
+    <table class="receipts">
+      <thead><tr><th>Date donated</th><th>Period covered</th><th>Packs sold</th><th>Amount given</th><th>Receipt</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <p class="small" id="note" hidden>Receipts are DigDeep's donation confirmations, with our home address blacked out.</p>
   <a class="btn" href="./#stickers">Shop bottle stickers</a>
 </main>
 <footer class="wrap"><span>© 2026 Tap Water. One tap. One sip.</span><nav><a href="privacy.html">Privacy</a><a href="support.html">Help</a><a href="./#stickers">Sticker shop</a></nav></footer>
 <script>
+function money(n) { return '$' + Number(n).toLocaleString(); }
 fetch('giving.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (g) {
-  document.getElementById('total').textContent = '$' + Number(g.totalUsd).toLocaleString();
-  if (g.packs > 0) document.getElementById('detail').textContent = 'From ' + Number(g.packs).toLocaleString() + ' sticker packs. Updated ' + g.updated + '.';
-  if (g.receipts && g.receipts.length) {
-    var ul = document.getElementById('receipts');
-    ul.innerHTML = '';
-    g.receipts.slice().reverse().forEach(function (x) {
-      var li = document.createElement('li');
-      var a = document.createElement('a');
-      a.href = x.url; a.textContent = 'Receipt';
-      var s = document.createElement('span');
-      s.textContent = x.date + ' · $' + Number(x.amountUsd).toLocaleString();
-      li.appendChild(s); li.appendChild(a); ul.appendChild(li);
-    });
+  var rows = (g.donations || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  if (!rows.length) {
+    // Before the first donation: the pledge, when it starts, and packs sold so far.
+    var sold = Number(g.packsSoldSoFar || 0);
+    document.getElementById('detail').textContent =
+      'First donation: ' + (g.firstDonation || 'April 2027') + '.' +
+      (sold > 0 ? ' ' + sold.toLocaleString() + ' packs sold so far, so $' + sold.toLocaleString() + ' is on its way.' : '');
+    return;
   }
+  document.getElementById('table').hidden = false;
+  document.getElementById('note').hidden = false;
+  var total = rows.reduce(function (s, d) { return s + Number(d.amountUsd); }, 0);
+  var packs = rows.reduce(function (s, d) { return s + Number(d.packs); }, 0);
+  document.getElementById('total').textContent = money(total);
+  document.getElementById('detail').textContent = 'given to DigDeep so far, from ' + packs.toLocaleString() + ' sticker packs.';
+  var tbody = document.getElementById('rows');
+  tbody.innerHTML = '';
+  rows.forEach(function (d) {
+    var tr = document.createElement('tr');
+    [d.date, d.period, Number(d.packs).toLocaleString(), money(d.amountUsd)].forEach(function (v) {
+      var td = document.createElement('td'); td.textContent = v; tr.appendChild(td);
+    });
+    var td = document.createElement('td');
+    if (d.receipt) { var a = document.createElement('a'); a.href = d.receipt; a.textContent = 'PDF'; td.appendChild(a); }
+    tr.appendChild(td); tbody.appendChild(tr);
+  });
 }).catch(function () {});
 </script>
 </body></html>

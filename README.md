@@ -8,17 +8,36 @@ The website for Tap Water: One-Tap Tracker, live at https://tapwaterapp.com. Pla
 - `cheer.html`: opens a friend's cheer in the app
 - `CNAME`: the custom domain
 
-## Giving (updated each quarter)
+## Giving record (one row per quarter)
 
-`giving.json` holds what sticker packs have given to DigDeep. The giving page
-and the app both read it. After each quarterly donation, edit it on GitHub:
-add 1 to the total for every pack sold, set the date, and add the receipt link:
+`giving.json` is the public record of donations to DigDeep. The giving page
+(tapwaterapp.com/giving) shows the total and a table, and the app reads the
+same file.
+
+**Until the first donation:** once a month, change `packsSoldSoFar` to the
+number of packs sold. The page shows "First donation: April 2027" and that
+number. The donation table appears by itself once it has its first row.
+
+**After each quarterly donation:**
+
+1. Black out your home address on DigDeep's receipt and save it as a PDF.
+2. Upload it to the `receipts/` folder in this repo (Add file > Upload files).
+3. Edit `giving.json` and add one row:
 
 ```json
 {
-  "totalUsd": 120,
-  "packs": 120,
-  "updated": "2027-01-05",
-  "receipts": [{ "date": "2027-01-05", "amountUsd": 120, "url": "https://link-to-the-receipt" }]
+  "firstDonation": "April 2027",
+  "packsSoldSoFar": 0,
+  "donations": [
+    {
+      "date": "2027-01-05",
+      "period": "Oct to Dec 2026",
+      "packs": 120,
+      "amountUsd": 120,
+      "receipt": "receipts/2027-01-digdeep.pdf"
+    }
+  ]
 }
 ```
+
+Separate rows with a comma. The total adds itself up.
