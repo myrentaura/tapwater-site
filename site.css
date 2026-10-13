@@ -23,6 +23,7 @@ nav a{text-decoration:none}
 .wm .lt{font-weight:700}
 .wm svg{display:inline-block;width:.2em;height:.28em;margin-left:.04em;vertical-align:baseline}
 .wm svg path{fill:var(--tapblue)}
+.wm .tm{font-family:var(--body,sans-serif);font-weight:600;font-size:.32em;letter-spacing:0;vertical-align:top;margin-left:.08em;position:relative;top:.15em}
 header .wm{font-size:28px}
 .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center;padding:40px 0 56px}
 @media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding-top:16px}}
