@@ -10,7 +10,7 @@ The website for Tap Water: One-Tap Tracker, live at https://tapwaterapp.com. Pla
 
 ## Giving record (one row per quarter)
 
-`giving.json` is the public record of donations to DigDeep. The giving page
+`giving.json` is the public record of donations to our clean water partner. The giving page
 (tapwaterapp.com/giving) shows the total and a table, and the app reads the
 same file.
 
@@ -20,7 +20,7 @@ number. The donation table appears by itself once it has its first row.
 
 **After each quarterly donation:**
 
-1. Black out your home address on DigDeep's receipt and save it as a PDF.
+1. Black out your home address on the donation receipt and save it as a PDF.
 2. Upload it to the `receipts/` folder in this repo (Add file > Upload files).
 3. Edit `giving.json` and add one row:
 
@@ -34,7 +34,7 @@ number. The donation table appears by itself once it has its first row.
       "period": "Oct to Dec 2026",
       "packs": 120,
       "amountUsd": 120,
-      "receipt": "receipts/2027-01-digdeep.pdf"
+      "receipt": "receipts/2027-01-donation.pdf"
     }
   ]
 }

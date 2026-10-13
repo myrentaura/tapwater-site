@@ -22,7 +22,7 @@ var APP_STORE_URL = '';
       '<h3></h3><p></p>' +
       '<div class="price">' + (p.price || 'Coming soon') + '</div>' +
       '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>' +
-      '<p class="gives">' + (p.gives === 2 ? '$2 from this pack' : '$1 from every pack') + ' goes to DigDeep. <a href="giving.html">See our receipts.</a></p>';
+      '<p class="gives">' + (p.gives === 2 ? '$2 from this pack' : '$1 from every pack') + ' goes to clean water. <a href="giving.html">See our receipts.</a></p>';
     card.querySelector('h3').textContent = p.name;
     card.querySelector('p').textContent = p.blurb;
     shop.appendChild(card);
