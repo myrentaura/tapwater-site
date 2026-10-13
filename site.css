@@ -202,3 +202,11 @@ main.prose h2:first-of-type{border-top:0;padding-top:0}
 .center-page{text-align:center}
 main.giving-page h1,main.friend-page h1{font-size:clamp(32px,5vw,46px);letter-spacing:-.045em;font-weight:900}
 footer{max-width:1040px}
+
+/* Boutique sticker book */
+.book{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 18px;max-width:880px;margin:28px auto 0}
+.book img{width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(60,30,30,.10));transition:transform .2s}
+.book img:nth-child(odd){transform:rotate(-4deg)}
+.book img:nth-child(even){transform:rotate(3deg)}
+.book img:hover{transform:rotate(0) scale(1.05)}
+@media (max-width:560px){.book{grid-template-columns:repeat(2,1fr);gap:4px 10px}}

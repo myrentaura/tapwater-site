@@ -82,6 +82,20 @@
     </div>
   </section>
 
+  <section id="book">
+    <div class="head"><h2>A sticker for every little win</h2><p>Hit your goal, keep a streak, drink a gallon on a busy day: each one earns a sticker for the My Bottle sticker book. Over 40 to collect, in your colorway.</p></div>
+    <div class="book">
+      <img data-book="goal-getter" src="img/stickers/strawberry-milk-goal-getter.png" alt="hydration handled" width="480" height="480" loading="lazy">
+      <img data-book="early-bird" src="img/stickers/strawberry-milk-early-bird.png" alt="rise and hydrate" width="480" height="480" loading="lazy">
+      <img data-book="streak-14" src="img/stickers/strawberry-milk-streak-14.png" alt="two weeks in my flow" width="480" height="480" loading="lazy">
+      <img data-book="busy-week" src="img/stickers/strawberry-milk-busy-week.png" alt="booked, busy, hydrated" width="480" height="480" loading="lazy">
+      <img data-book="streak-100" src="img/stickers/strawberry-milk-streak-100.png" alt="100 days. icon behavior." width="480" height="480" loading="lazy">
+      <img data-book="weekend" src="img/stickers/strawberry-milk-weekend.png" alt="weekend wellness club" width="480" height="480" loading="lazy">
+      <img data-book="gallon-girl" src="img/stickers/strawberry-milk-gallon-girl.png" alt="gallon girl" width="480" height="480" loading="lazy">
+      <img data-book="travel-day" src="img/stickers/strawberry-milk-travel-day.png" alt="on the go, still glowing" width="480" height="480" loading="lazy">
+    </div>
+  </section>
+
   <section id="wins" class="block paper">
     <div class="split">
       <div class="phone2 solo"><img alt="The My Bottle sticker book in the app" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="780" height="1782" loading="lazy"></div>
@@ -126,6 +140,7 @@
     var pack = cw === 'sea-glass' ? 'sea-glass' : 'strawberry-milk';
     document.querySelectorAll('img[data-flat]').forEach(function (img) { img.src = 'img/flatlay-' + pack + '.jpg'; });
     document.querySelectorAll('img[data-stk]').forEach(function (img) { img.src = 'img/sticker-' + pack + '.png'; });
+    document.querySelectorAll('img[data-book]').forEach(function (img) { img.src = 'img/stickers/' + cw + '-' + img.dataset.book + '.png'; });
     if (save) try { localStorage.setItem('tapwater.cw', cw); } catch (e) {}
   }
   buttons.forEach(function (b) { b.addEventListener('click', function () { pick(b.dataset.cw, true); }); });
