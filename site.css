@@ -166,3 +166,28 @@ h1,h2,h3{font-family:var(--logo);font-weight:800;letter-spacing:-.035em}
 .pack .art{height:150px;gap:0}
 .pack .art img{width:78px;height:78px;margin:0 -6px;transform:rotate(var(--r));filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
 @media (max-width:760px){.step{flex-direction:column;align-items:flex-start;flex-wrap:nowrap}.step p{flex-basis:auto}}
+
+/* Color blocks (Tina 2026-10-13: separate the hero and sections) */
+:root{--cream:#FBF6F1;--paper:#FFFFFF;--tint:color-mix(in srgb,var(--soft) 70%,#fff)}
+@media (prefers-color-scheme:dark){:root{--cream:var(--nbg);--paper:color-mix(in srgb,var(--nsurf) 60%,var(--nbg));--tint:var(--nsurf)}}
+body{background:var(--cream)}
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--cream) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid var(--line)}
+.topbar header.top{padding-block:12px}
+.topbar nav{align-items:center;gap:6px}
+.topbar nav a{padding:8px 14px;border-radius:999px;transition:background .2s}
+.topbar nav a:hover{background:color-mix(in srgb,var(--main) 35%,transparent)}
+.topbar nav a.nav-cta{background:var(--ink);color:var(--on-ink);margin-left:6px}
+@media (prefers-color-scheme:dark){.topbar nav a.nav-cta{background:var(--main);color:var(--deep)}}
+@media (max-width:480px){.topbar nav a{padding:6px 9px;font-size:14px}.topbar header .wm{font-size:24px}}
+.hero{background:linear-gradient(160deg,var(--soft),color-mix(in srgb,var(--main) 40%,var(--soft)));border-radius:36px;padding:48px 44px;margin-top:20px;overflow:hidden}
+@media (max-width:760px){.hero{padding:28px 20px 12px;border-radius:28px;margin-inline:-4px}}
+@media (prefers-color-scheme:dark){.hero{background:linear-gradient(160deg,var(--nsurf),color-mix(in srgb,var(--main) 18%,var(--nbg)))}}
+section.block{box-shadow:0 0 0 100vmax var(--blk);clip-path:inset(0 -100vmax);background:var(--blk);margin-block:56px;padding-block:64px}
+section.paper{--blk:var(--paper)}
+section.tint{--blk:var(--tint)}
+section.paper .step,section.paper .card{background:var(--cream);border-color:transparent}
+section.tint .card{background:var(--paper)}
+#stickers,#dont-toss{padding-block:24px}
+footer{margin-top:24px}
+.topbar header.top{flex-wrap:nowrap}
+@media (max-width:560px){.topbar nav a[href="./#features"],.topbar nav a[href="./#stickers"]:not(.nav-cta){display:none}}
