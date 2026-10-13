@@ -2,13 +2,16 @@
 // Turn on "Allow promotion codes" on each payment link so referral codes work at checkout.
 var PACKS = [
 // Prices include shipping.
-  { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', price: '$15', link: '' },
-  { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', price: '$15', link: '' },
-  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', price: '$24', link: '', gives: 2 },
+  { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', deep: '#6B1F43', price: '$15', link: '' },
+  { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', deep: '#15485C', price: '$15', link: '' },
+  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', deep: '#6B1F43', price: '$24', link: '', gives: 2 },
 ];
 // The store listings, once the app is live.
 var PLAY_URL = '';
 var APP_STORE_URL = '';
+
+function stk(bg, inner) { return '<span class="stk" style="background:' + bg + '">' + inner + '</span>'; }
+var drop = '<svg viewBox="0 0 10 14"><path fill="#2E9BE0" d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg>';
 
 (function () {
   var shop = document.getElementById('shop');
@@ -18,7 +21,7 @@ var APP_STORE_URL = '';
     card.className = 'card pack';
     card.innerHTML =
       '<div class="art" style="background:linear-gradient(160deg,' + p.main + ',' + p.pop + ')">' +
-      '<span style="background:' + p.main + '">💧</span><span style="background:#fff">📲</span><span style="background:' + p.pop + '">✨</span></div>' +
+      stk(p.main, drop) + stk('#fff', '<b style="--d:' + p.deep + '">tw</b>') + stk(p.pop, drop) + '</div>' +
       '<h3></h3><p></p>' +
       '<div class="price">' + (p.price || 'Coming soon') + '</div>' +
       '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>' +

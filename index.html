@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&display=swap"><link rel="stylesheet" href="site.css">
+<script>try{var c=localStorage.getItem('tapwater.cw');if(c)document.documentElement.dataset.cw=c}catch(e){}</script>
 <title>Tap Water: One-Tap Tracker</title>
 <meta name="description" content="The water tracker for people on the go. Log a glass with one tap on your phone, a reminder, or a sticker on your bottle.">
 </head><body>
@@ -8,84 +9,132 @@
   <section class="hero">
     <div>
       <h1>The water tracker for people on the go.</h1>
-      <p class="lead">tapwater makes staying hydrated easier than ever. One tap logs a glass: tap the app, tap a reminder, or tap your phone on the sticker on your bottle. All in a colorway that matches it.</p>
+      <p class="lead">tapwater makes staying hydrated easier than ever. One tap logs a glass: tap the app, tap a reminder, or tap your phone on the sticker on your bottle.</p>
       <div class="ctas">
         <a class="btn" id="get" aria-disabled="true">Coming soon for iPhone and Android</a>
         <a class="btn ghost" href="#stickers">Shop bottle stickers</a>
       </div>
-      <p class="small" style="margin-top:12px">Free to use, with optional Extras. No ads. No account.</p>
-    </div>
-    <div class="phone" aria-hidden="true"><div class="screen">
-      <div class="amt">40 oz</div>
-      <div class="ring">
-        <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54" fill="none" stroke-width="10" stroke="color-mix(in srgb,var(--main) 35%,transparent)"/><circle cx="60" cy="60" r="54" fill="none" stroke-width="10" stroke="var(--shade)" stroke-linecap="round" stroke-dasharray="339.3" stroke-dashoffset="127"/></svg>
-        <div class="tap">tap</div>
+      <div class="picker">
+        <p class="small">Match your bottle: <b id="cw-name">Strawberry Milk</b></p>
+        <div class="swatches" role="radiogroup" aria-label="Colorway">
+          <button role="radio" data-cw="strawberry-milk" data-name="Strawberry Milk" style="--c:#F7B6C8" aria-label="Strawberry Milk"></button>
+          <button role="radio" data-cw="sea-glass" data-name="Sea Glass" style="--c:#9ED9E8" aria-label="Sea Glass"></button>
+          <button role="radio" data-cw="matcha-latte" data-name="Matcha Latte" style="--c:#BFD8A8" aria-label="Matcha Latte"></button>
+          <button role="radio" data-cw="lavender-haze" data-name="Lavender Haze" style="--c:#CDBDF2" aria-label="Lavender Haze"></button>
+          <button role="radio" data-cw="peach-fizz" data-name="Peach Fizz" style="--c:#FFC98F" aria-label="Peach Fizz"></button>
+        </div>
       </div>
-      <div class="small">24 oz to go</div>
-    </div></div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <svg class="bottle" viewBox="0 0 200 420">
+        <path d="M150 92c34 0 40 26 40 60s-6 58-40 58" class="lid" fill="none" stroke-width="16" stroke-linecap="round"/>
+        <rect class="lid" x="44" y="20" width="112" height="54" rx="18"/>
+        <rect class="lid" x="70" y="6" width="60" height="22" rx="10"/>
+        <rect x="30" y="66" width="140" height="340" rx="40" fill="var(--main)"/>
+                <rect x="46" y="110" width="16" height="240" rx="8" fill="#fff" opacity=".35"/>
+        <circle cx="106" cy="250" r="40" fill="#fff"/>
+        <circle cx="106" cy="250" r="33" fill="var(--pop)"/>
+        <path d="M106 226s-16 19-16 29a16 16 0 0 0 32 0c0-10-16-29-16-29Z" fill="var(--tapblue)"/>
+      </svg>
+      <div class="shot back"><img alt="" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="390" height="844"></div>
+      <div class="shot front"><img alt="" data-shot="home" src="shots/strawberry-milk-home.jpg" width="390" height="844"></div>
+    </div>
   </section>
 
   <section id="features">
-    <div class="head"><h2>Logging takes one second</h2><p>Made to be the easiest habit you have, wherever your day takes you.</p></div>
-    <div class="grid">
-      <div class="card"><span class="emoji">💧</span><h3>One big tap</h3><p>Open the app and tap. A ring fills as you drink. Hold the button to pick a different glass size.</p></div>
-      <div class="card"><span class="emoji">🔔</span><h3>Log from a reminder</h3><p>Press "+1 glass" right on the notification, without opening the app.</p></div>
-      <div class="card"><span class="emoji">🏷️</span><h3>Tap your bottle</h3><p>Hold your phone to a tapwater sticker on your bottle and the glass is logged.</p></div>
-      <div class="card"><span class="emoji">📱</span><h3>Home screen widget</h3><p>See your progress at a glance and log a glass straight from your home screen.</p></div>
-      <div class="card"><span class="emoji">🌙</span><h3>Evening catch-up</h3><p>Missed a few? One quick check-in at night fills in the day.</p></div>
-      <div class="card"><span class="emoji">🔒</span><h3>No account needed</h3><p>No sign-up and no ads. Your water log stays on your phone.</p></div>
+    <div class="head"><h2>One tap. One glass.</h2><p>Three ways to log, all faster than unlocking your phone and typing.</p></div>
+    <div class="steps">
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="var(--main)"/><circle cx="32" cy="32" r="18" fill="#fff"/><text x="32" y="38" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="16" fill="var(--deep)">tap</text></svg>
+        <h3>Tap the app</h3><p>One big button. A ring fills as you drink.</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="14" width="52" height="36" rx="12" fill="var(--main)"/><rect x="12" y="20" width="26" height="6" rx="3" fill="#fff"/><rect x="12" y="30" width="18" height="5" rx="2.5" fill="#fff" opacity=".7"/><rect x="36" y="34" width="18" height="11" rx="5.5" fill="var(--deep)"/><text x="45" y="42.5" text-anchor="middle" font-family="Figtree" font-weight="700" font-size="7" fill="#fff">+1</text></svg>
+        <h3>Tap a reminder</h3><p>Press "+1 glass" right on the notification.</p>
+      </div>
+      <div class="step">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="10" width="28" height="48" rx="10" fill="var(--main)"/><rect x="22" y="4" width="20" height="10" rx="4" fill="var(--deep)"/><circle cx="32" cy="36" r="9" fill="#fff"/><path d="M32 30s-4.5 5-4.5 7.5a4.5 4.5 0 0 0 9 0C36.5 35 32 30 32 30Z" fill="var(--tapblue)"/><path d="M50 22c4 3 4 9 0 12M54 18c6 5 6 15 0 20" fill="none" stroke="var(--deep)" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Tap your bottle</h3><p>Hold your phone to the sticker on your bottle. Done.</p>
+      </div>
+    </div>
+    <ul class="pills">
+      <li>Home screen widget</li><li>Evening catch-up</li><li>No account needed</li><li>No ads</li>
+    </ul>
+  </section>
+
+  <section id="stickers">
+    <div class="head"><h2>The sticker that logs your water</h2><p>Glossy, waterproof NFC stickers made to work on metal bottles like Owala and Stanley. Stick one on, set it up once, then tap your phone to it whenever you drink.</p></div>
+    <div class="shop" id="shop"></div>
+    <div class="ref">
+      <div><h3>Give 15%, get a free sticker</h3><p style="margin-top:6px">Share your code from the app. Your friend gets 15% off their first pack, and you get a free bonus sticker in your next order.</p></div>
+      <span class="code" title="Example code">MAYA15</span>
     </div>
   </section>
 
   <section id="yours">
-    <div class="head"><h2>Make it yours</h2><p>A tracker as cute as your bottle.</p></div>
-    <div class="grid">
-      <div class="card"><span class="emoji">🎨</span><h3>Colorways</h3><p>Strawberry Milk and Sea Glass free, plus Matcha Latte, Lavender Haze and Peach Fizz with Extras. Each has a Night version.</p></div>
-      <div class="card"><span class="emoji">💬</span><h3>Reminders in your tone</h3><p>Cheeky, Sweet or Simple, at the times that suit your day.</p></div>
-      <div class="card"><span class="emoji">🫶</span><h3>Gentle mode</h3><p>Fewer reminders, quiet hours, rest days that don't break your streak, and no guilt anywhere.</p></div>
+    <div class="split">
+      <div>
+        <div class="head"><h2>Made to match your bottle</h2><p>Pick the colorway that goes with your bottle. Each one has a Night version for after dark.</p></div>
+        <div class="cw-list">
+          <span style="--c:#F7B6C8">Strawberry Milk <i>free</i></span>
+          <span style="--c:#9ED9E8">Sea Glass <i>free</i></span>
+          <span style="--c:#BFD8A8">Matcha Latte</span>
+          <span style="--c:#CDBDF2">Lavender Haze</span>
+          <span style="--c:#FFC98F">Peach Fizz</span>
+        </div>
+      </div>
+      <div class="mini-cards">
+        <div class="card"><h3>Reminders in your tone</h3><p>Cheeky, Sweet or Simple, at the times that suit your day.</p></div>
+        <div class="card"><h3>Gentle mode</h3><p>Fewer reminders, quiet hours, and rest days that don't break your streak. No guilt anywhere.</p></div>
+      </div>
     </div>
   </section>
 
-  <section id="motivation">
-    <div class="head"><h2>Stay motivated</h2><p>Little wins that make you want to tap again.</p></div>
-    <div class="grid">
-      <div class="card"><span class="emoji">🔥</span><h3>Streaks</h3><p>Keep your streak going and share a cute streak card.</p></div>
-      <div class="card"><span class="emoji">🧴</span><h3>My Bottle sticker book</h3><p>Earn digital stickers for goals, weekly challenges and milestones, and stick them on your virtual bottle.</p></div>
-      <div class="card"><span class="emoji">📍</span><h3>50 States</h3><p>Collect a sticker for every state you drink water in. Optional, and only the state is saved.</p></div>
+  <section id="wins">
+    <div class="split">
+      <div class="shot solo"><img alt="The My Bottle sticker book in the app" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="390" height="844" loading="lazy"></div>
+      <div>
+        <div class="head"><h2>Little wins that keep you tapping</h2></div>
+        <dl class="wins">
+          <dt>Streaks</dt><dd>Keep it going and share a cute streak card.</dd>
+          <dt>My Bottle sticker book</dt><dd>Earn stickers for goals, weekly challenges and milestones, and stick them on your virtual bottle.</dd>
+          <dt>50 States</dt><dd>Collect a sticker for every state you drink water in. Optional, and only the state is saved.</dd>
+          <dt>Friends and cheers</dt><dd>Swap six-letter codes to add friends, then send them a cheer when they need one.</dd>
+        </dl>
+      </div>
     </div>
   </section>
 
-  <section id="friends">
-    <div class="head"><h2>Better with friends</h2><p>Hydrate together.</p></div>
-    <div class="grid">
-      <div class="card"><span class="emoji">📣</span><h3>Send a cheer</h3><p>Send a friend a cute cheer card by text, WhatsApp or Instagram.</p></div>
-      <div class="card"><span class="emoji">👯</span><h3>Friend codes</h3><p>Swap six-letter codes to add friends. No email or password.</p></div>
-      <div class="card"><span class="emoji">✨</span><h3>Cheers that pop up</h3><p>With Extras, cheers land right on your friend's phone. Getting cheers is always free.</p></div>
-    </div>
-  </section>
-
-  <section id="extras">
-    <div class="head"><h2>tapwater Extras</h2><p>$1.99 a month or $12.99 a year, with a 7-day free trial. Everything else stays free.</p></div>
-    <div class="grid">
-      <div class="card"><span class="emoji">🎨</span><h3>Every colorway</h3><p>All colorways and their Night versions, plus new drops as they come out.</p></div>
-      <div class="card"><span class="emoji">📅</span><h3>Your full history</h3><p>See your whole year of water, not just the recent weeks.</p></div>
-      <div class="card"><span class="emoji">📣</span><h3>Direct cheers</h3><p>Send cheers that pop up on your friends' phones.</p></div>
-    </div>
+  <section id="extras" class="band">
+    <div><h2>tapwater Extras</h2><p>Every colorway, your full history, and cheers that pop up on your friends' phones.</p></div>
+    <div class="price-tag"><b>$1.99</b>/month<br><span>or $12.99 a year · 7-day free trial</span></div>
+    <p class="small band-note">Tracking, reminders, stickers and streaks are always free.</p>
   </section>
 
   <section id="dont-toss">
     <div class="head"><h2>Tap, don't toss</h2><p>Every 16.9 oz you log counts as a plastic bottle skipped, and the app keeps a running count. $1 from every sticker pack goes to a US clean water nonprofit. <a href="giving.html">See our giving record.</a></p></div>
   </section>
-
-  <section id="stickers">
-    <div class="head"><h2>Bottle stickers</h2><p>Glossy, waterproof NFC stickers made to work on metal bottles like Owala and Stanley. Stick one on, set it up once in the app, then tap your phone to it whenever you drink.</p></div>
-    <div class="shop" id="shop"></div>
-    <div class="ref">
-      <div><h3>Give 15%, get a free sticker</h3><p style="margin-top:6px">Share your code from the app. Your friend gets 15% off their first pack, and you get a free bonus sticker in your next order. Enter codes at checkout.</p></div>
-      <span class="code" title="Example code">MAYA15</span>
-    </div>
-  </section>
 </main>
 <footer class="wrap"><span>© 2026 Tap Water. One tap. One glass.</span><nav><a href="privacy.html">Privacy</a><a href="support.html">Help</a><a href="./#stickers">Sticker shop</a><a href="giving.html">Giving</a></nav></footer>
 <script src="shop.js"></script>
+<script>
+(function () {
+  var root = document.documentElement, name = document.getElementById('cw-name');
+  var buttons = document.querySelectorAll('.swatches button');
+  function pick(cw, save) {
+    root.dataset.cw = cw;
+    buttons.forEach(function (b) {
+      var on = b.dataset.cw === cw;
+      b.setAttribute('aria-checked', on);
+      if (on) name.textContent = b.dataset.name;
+    });
+    document.querySelectorAll('img[data-shot]').forEach(function (img) {
+      img.src = 'shots/' + cw + '-' + img.dataset.shot + '.jpg';
+    });
+    if (save) try { localStorage.setItem('tapwater.cw', cw); } catch (e) {}
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { pick(b.dataset.cw, true); }); });
+  pick(root.dataset.cw || 'strawberry-milk', false);
+})();
+</script>
 </body></html>
