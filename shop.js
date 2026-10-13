@@ -4,7 +4,7 @@ var PACKS = [
 // Prices include shipping.
   { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', price: '$15', link: '' },
   { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', price: '$15', link: '' },
-  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', price: '$24', link: '' },
+  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', price: '$24', link: '', gives: 2 },
 ];
 // The store listings, once the app is live.
 var PLAY_URL = '';
@@ -22,7 +22,7 @@ var APP_STORE_URL = '';
       '<h3></h3><p></p>' +
       '<div class="price">' + (p.price || 'Coming soon') + '</div>' +
       '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>' +
-      '<p class="gives">$1 from every pack goes to DigDeep. <a href="giving.html">See our receipts.</a></p>';
+      '<p class="gives">' + (p.gives === 2 ? '$2 from this pack' : '$1 from every pack') + ' goes to DigDeep. <a href="giving.html">See our receipts.</a></p>';
     card.querySelector('h3').textContent = p.name;
     card.querySelector('p').textContent = p.blurb;
     shop.appendChild(card);
