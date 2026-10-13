@@ -26,18 +26,10 @@
       </div>
     </div>
     <div class="stage" aria-hidden="true">
-      <svg class="bottle" viewBox="0 0 200 420">
-        <path d="M150 92c34 0 40 26 40 60s-6 58-40 58" class="lid" fill="none" stroke-width="16" stroke-linecap="round"/>
-        <rect class="lid" x="44" y="20" width="112" height="54" rx="18"/>
-        <rect class="lid" x="70" y="6" width="60" height="22" rx="10"/>
-        <rect x="30" y="66" width="140" height="340" rx="40" fill="var(--main)"/>
-                <rect x="46" y="110" width="16" height="240" rx="8" fill="#fff" opacity=".35"/>
-        <circle cx="106" cy="250" r="40" fill="#fff"/>
-        <circle cx="106" cy="250" r="33" fill="var(--pop)"/>
-        <path d="M106 226s-16 19-16 29a16 16 0 0 0 32 0c0-10-16-29-16-29Z" fill="var(--tapblue)"/>
-      </svg>
-      <div class="shot back"><img alt="" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="390" height="844"></div>
-      <div class="shot front"><img alt="" data-shot="home" src="shots/strawberry-milk-home.jpg" width="390" height="844"></div>
+      <div class="glow"></div>
+      <div class="phone2 back"><img alt="" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="780" height="1782"></div>
+      <div class="phone2 front"><img alt="" data-shot="home" src="shots/strawberry-milk-home.jpg" width="780" height="1782"></div>
+      <img class="float-stk" data-stk src="img/sticker-strawberry-milk.png" alt="" width="354" height="354">
     </div>
   </section>
 
@@ -45,16 +37,13 @@
     <div class="head"><h2>One tap. One glass.</h2><p>Three ways to log, all faster than unlocking your phone and typing.</p></div>
     <div class="steps">
       <div class="step">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="var(--main)"/><circle cx="32" cy="32" r="18" fill="#fff"/><text x="32" y="38" text-anchor="middle" font-family="Fredoka" font-weight="700" font-size="16" fill="var(--deep)">tap</text></svg>
-        <h3>Tap the app</h3><p>One big button. A ring fills as you drink.</p>
+        <span class="num">01</span><h3>Tap the app</h3><p>One big button. A ring fills as you drink.</p>
       </div>
       <div class="step">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="6" y="14" width="52" height="36" rx="12" fill="var(--main)"/><rect x="12" y="20" width="26" height="6" rx="3" fill="#fff"/><rect x="12" y="30" width="18" height="5" rx="2.5" fill="#fff" opacity=".7"/><rect x="36" y="34" width="18" height="11" rx="5.5" fill="var(--deep)"/><text x="45" y="42.5" text-anchor="middle" font-family="Figtree" font-weight="700" font-size="7" fill="#fff">+1</text></svg>
-        <h3>Tap a reminder</h3><p>Press "+1 glass" right on the notification.</p>
+        <span class="num">02</span><h3>Tap a reminder</h3><p>Press "+1 glass" right on the notification.</p>
       </div>
       <div class="step">
-        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="10" width="28" height="48" rx="10" fill="var(--main)"/><rect x="22" y="4" width="20" height="10" rx="4" fill="var(--deep)"/><circle cx="32" cy="36" r="9" fill="#fff"/><path d="M32 30s-4.5 5-4.5 7.5a4.5 4.5 0 0 0 9 0C36.5 35 32 30 32 30Z" fill="var(--tapblue)"/><path d="M50 22c4 3 4 9 0 12M54 18c6 5 6 15 0 20" fill="none" stroke="var(--deep)" stroke-width="3" stroke-linecap="round"/></svg>
-        <h3>Tap your bottle</h3><p>Hold your phone to the sticker on your bottle. Done.</p>
+        <span class="num">03</span><h3>Tap your bottle</h3><p>Hold your phone to the sticker on your bottle. Done.</p>
       </div>
     </div>
     <ul class="pills">
@@ -64,6 +53,7 @@
 
   <section id="stickers">
     <div class="head"><h2>The sticker that logs your water</h2><p>Glossy, waterproof NFC stickers made to work on metal bottles like Owala and Stanley. Stick one on, set it up once, then tap your phone to it whenever you drink.</p></div>
+    <figure class="flatlay"><img data-flat src="img/flatlay-strawberry-milk.jpg" alt="A tapwater Strawberry Milk sticker pack with stickers, a bottle and the app" width="1600" height="1061" loading="lazy"></figure>
     <div class="shop" id="shop"></div>
     <div class="ref">
       <div><h3>Give 15%, get a free sticker</h3><p style="margin-top:6px">Share your code from the app. Your friend gets 15% off their first pack, and you get a free bonus sticker in your next order.</p></div>
@@ -92,7 +82,7 @@
 
   <section id="wins">
     <div class="split">
-      <div class="shot solo"><img alt="The My Bottle sticker book in the app" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="390" height="844" loading="lazy"></div>
+      <div class="phone2 solo"><img alt="The My Bottle sticker book in the app" data-shot="bottle" src="shots/strawberry-milk-bottle.jpg" width="780" height="1782" loading="lazy"></div>
       <div>
         <div class="head"><h2>Little wins that keep you tapping</h2></div>
         <dl class="wins">
@@ -131,6 +121,9 @@
     document.querySelectorAll('img[data-shot]').forEach(function (img) {
       img.src = 'shots/' + cw + '-' + img.dataset.shot + '.jpg';
     });
+    var pack = cw === 'sea-glass' ? 'sea-glass' : 'strawberry-milk';
+    document.querySelectorAll('img[data-flat]').forEach(function (img) { img.src = 'img/flatlay-' + pack + '.jpg'; });
+    document.querySelectorAll('img[data-stk]').forEach(function (img) { img.src = 'img/sticker-' + pack + '.png'; });
     if (save) try { localStorage.setItem('tapwater.cw', cw); } catch (e) {}
   }
   buttons.forEach(function (b) { b.addEventListener('click', function () { pick(b.dataset.cw, true); }); });

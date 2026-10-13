@@ -139,3 +139,30 @@ footer nav{font-weight:600}
   .shop{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}
   .shop .pack{scroll-snap-align:start}
 }
+
+/* Clean pass (Tina 2026-10-13: more polished, less cartoony) */
+h1,h2,h3{font-family:var(--logo);font-weight:800;letter-spacing:-.035em}
+.hero h1{font-weight:900;letter-spacing:-.045em;line-height:1.02}
+.stage{height:560px}
+.stage .glow{position:absolute;inset:8% 0 4% 6%;border-radius:50%;background:radial-gradient(circle at 35% 40%,var(--main),transparent 62%),radial-gradient(circle at 70% 70%,var(--pop),transparent 58%);filter:blur(30px);opacity:.9}
+.phone2{background:#0E0E10;border-radius:46px;padding:9px;box-shadow:0 40px 70px -30px rgba(40,10,30,.45),inset 0 0 0 1.5px #3a3a40;position:relative}
+.phone2::before{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:30%;height:22px;border-radius:999px;background:#0E0E10;z-index:2}
+.phone2 img{display:block;width:100%;height:auto;border-radius:38px}
+.stage .phone2{position:absolute;width:236px}
+.stage .front{right:4%;top:22px;z-index:2}
+.stage .back{right:44%;top:70px;width:206px;transform:rotate(-7deg);z-index:1}
+.stage .float-stk{position:absolute;z-index:3;width:92px;height:92px;left:6%;bottom:40px;transform:rotate(-12deg);filter:drop-shadow(0 14px 18px rgba(0,0,0,.22))}
+@media (max-width:760px){
+  .stage{height:470px;max-width:370px}
+  .stage .phone2{width:196px}.stage .back{width:170px;right:42%}
+  .stage .float-stk{width:72px;height:72px;left:2%;bottom:24px}
+}
+.phone2.solo{width:min(270px,78%);justify-self:center;transform:rotate(-3deg)}
+.step{background:var(--surface);border:1px solid var(--line)}
+.step .num{font:800 15px var(--logo);letter-spacing:.04em;color:var(--shade);margin-bottom:6px}
+.card,.step{box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.flatlay{margin:0 0 20px;border-radius:28px;overflow:hidden;box-shadow:0 30px 60px -36px rgba(40,10,30,.4)}
+.flatlay img{display:block;width:100%;height:auto}
+.pack .art{height:150px;gap:0}
+.pack .art img{width:78px;height:78px;margin:0 -6px;transform:rotate(var(--r));filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
+@media (max-width:760px){.step{flex-direction:column;align-items:flex-start;flex-wrap:nowrap}.step p{flex-basis:auto}}

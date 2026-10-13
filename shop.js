@@ -2,9 +2,9 @@
 // Turn on "Allow promotion codes" on each payment link so referral codes work at checkout.
 var PACKS = [
 // Prices include shipping.
-  { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', deep: '#6B1F43', price: '$15', link: '' },
-  { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', deep: '#15485C', price: '$15', link: '' },
-  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', deep: '#6B1F43', price: '$24', link: '', gives: 2 },
+  { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', deep: '#6B1F43', art: ['strawberry-milk', 'strawberry-milk', 'strawberry-milk'], price: '$15', link: '' },
+  { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', deep: '#15485C', art: ['sea-glass', 'sea-glass', 'sea-glass'], price: '$15', link: '' },
+  { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', deep: '#6B1F43', art: ['strawberry-milk', 'sea-glass', 'strawberry-milk'], price: '$24', link: '', gives: 2 },
 ];
 // The store listings, once the app is live.
 var PLAY_URL = '';
@@ -21,7 +21,7 @@ var drop = '<svg viewBox="0 0 10 14"><path fill="#2E9BE0" d="M5 0C5 0 0 6.2 0 9a
     card.className = 'card pack';
     card.innerHTML =
       '<div class="art" style="background:linear-gradient(160deg,' + p.main + ',' + p.pop + ')">' +
-      stk(p.main, drop) + stk('#fff', '<b style="--d:' + p.deep + '">tw</b>') + stk(p.pop, drop) + '</div>' +
+      p.art.map(function (a, i) { return '<img src="img/sticker-' + a + '.png" alt="" style="--r:' + [-8, 4, 10][i] + 'deg">'; }).join('') + '</div>' +
       '<h3></h3><p></p>' +
       '<div class="price">' + (p.price || 'Coming soon') + '</div>' +
       '<a class="btn"' + (ready ? ' href="' + p.link + '"' : ' aria-disabled="true"') + '>' + (ready ? 'Buy now' : 'Opening soon') + '</a>' +
