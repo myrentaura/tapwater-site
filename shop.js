@@ -4,7 +4,6 @@ var PACKS = [
 // Prices include shipping.
   { name: 'Strawberry Milk pack', blurb: '3 NFC stickers in pink', main: '#F7B6C8', pop: '#FFE7A3', price: '$15', link: '' },
   { name: 'Sea Glass pack', blurb: '3 NFC stickers in aqua', main: '#9ED9E8', pop: '#FFD6A8', price: '$15', link: '' },
-  { name: 'Mix pack', blurb: 'One in each of 3 colorways', main: '#CDBDF2', pop: '#FFC98F', price: '$15', link: '' },
   { name: 'Squad pack', blurb: '6 NFC stickers to share with your people', main: '#F7B6C8', pop: '#9ED9E8', price: '$24', link: '' },
 ];
 // The store listings, once the app is live.
