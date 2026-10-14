@@ -210,3 +210,8 @@ footer{max-width:1040px}
 .book img:nth-child(even){transform:rotate(3deg)}
 .book img:hover{transform:rotate(0) scale(1.05)}
 @media (max-width:560px){.book{grid-template-columns:repeat(2,1fr);gap:4px 10px}}
+
+/* Community bottle count */
+.community{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:18px}
+.community b{font-family:'DM Sans',sans-serif;font-weight:900;font-size:clamp(36px,6vw,56px);color:var(--ink);letter-spacing:-.02em}
+.community span{color:var(--muted)}

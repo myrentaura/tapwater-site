@@ -9,6 +9,7 @@
   <p>$1 from every Tap Water sticker pack goes to a US nonprofit working to bring clean running water to every home in the country. We'll name our partner here once they've said yes. We donate once a quarter and post every donation here, with its receipt.</p>
   <div class="giving-total" id="total">$1 a pack</div>
   <p class="small" id="detail">First donation: April 2027.</p>
+  <div class="community" data-community hidden><b data-bottles></b><span>plastic bottles skipped by tapwater sippers so far</span></div>
   <div class="table-wrap" id="table" hidden>
     <table class="receipts">
       <thead><tr><th>Date donated</th><th>Period covered</th><th>Packs sold</th><th>Amount given</th><th>Receipt</th></tr></thead>
@@ -50,4 +51,5 @@ fetch('giving.json', { cache: 'no-store' }).then(function (r) { return r.json();
   });
 }).catch(function () {});
 </script>
+<script src="community.js" defer></script>
 </body></html>
