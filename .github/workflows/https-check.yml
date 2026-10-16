@@ -1,0 +1,27 @@
+# One-off check of tapwaterapp.com's DNS and HTTPS certificate. Runs only on the https-check branch.
+name: HTTPS check
+on:
+  push:
+    branches: [https-check]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DNS
+        run: |
+          for t in A AAAA CAA; do echo "== tapwaterapp.com $t"; dig +short tapwaterapp.com $t @1.1.1.1; done
+          echo "== www CNAME"; dig +short www.tapwaterapp.com CNAME @1.1.1.1
+          echo "== www A"; dig +short www.tapwaterapp.com A @1.1.1.1
+      - name: Certificate
+        run: |
+          for h in tapwaterapp.com www.tapwaterapp.com; do
+            echo "== $h"
+            echo | openssl s_client -connect $h:443 -servername $h 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName || echo "no cert"
+            curl -sS -o /dev/null -w "curl https://$h -> %{http_code} %{redirect_url}\n" https://$h/ || true
+            curl -sS -o /dev/null -w "curl http://$h -> %{http_code} %{redirect_url}\n" http://$h/ || true
+          done
+      - name: Each A record
+        run: |
+          for ip in $(dig +short tapwaterapp.com A @1.1.1.1); do
+            echo "== $ip"; echo | openssl s_client -connect $ip:443 -servername tapwaterapp.com 2>/dev/null | openssl x509 -noout -subject -issuer -dates || echo "no cert"
+          done
