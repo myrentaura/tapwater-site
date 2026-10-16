@@ -37,6 +37,7 @@ header .wm{font-size:28px}
 .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:32px;align-items:center;padding:40px 0 56px}
 @media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding-top:16px}}
 .hero h1{font-size:clamp(38px,6vw,60px)}
+.hero p.tagline{font:800 clamp(20px,2.6vw,26px) var(--logo);letter-spacing:-.02em;color:var(--shade);margin-top:12px}
 .hero p.lead{color:var(--muted);margin-top:16px;font-size:19px;max-width:46ch}
 .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .btn{display:inline-block;border:0;border-radius:999px;padding:13px 22px;font:700 16px var(--body);background:var(--ink);color:var(--on-ink);text-decoration:none;cursor:pointer;text-align:center}
