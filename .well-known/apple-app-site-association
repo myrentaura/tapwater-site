@@ -3,7 +3,7 @@
     "details": [
       {
         "appIDs": ["TEAMID.com.tapwater.onetap"],
-        "components": [{ "/": "/log*" }, { "/": "/cheer*" }, { "/": "/friend*" }]
+        "components": [{ "/": "/log*" }, { "/": "/cheer*" }, { "/": "/friend*" }, { "/": "/start*" }]
       }
     ]
   }

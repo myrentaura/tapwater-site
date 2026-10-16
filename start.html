@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&display=swap"><link rel="stylesheet" href="site.css">
+<title>Welcome to the sticker club · Tap Water</title>
+<meta name="description" content="You got a Tap Water sticker pack. Here's how to get the app and set up your bottle sticker.">
+<style>
+.start-page{display:flex;flex-direction:column;align-items:center;gap:18px;padding-block:32px 64px;text-align:center}
+.start-page .kicker{font:700 14px var(--body);letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.start-stk{width:150px;height:150px;transform:rotate(-4deg)}
+.start-box{width:100%;max-width:520px;background:var(--surface);border-radius:24px;padding:24px;text-align:left;display:flex;flex-direction:column;gap:10px}
+.start-box h2{font-size:22px}
+.start-box ol{padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.start-box p,.start-box li{color:var(--ink)}
+</style>
+</head><body>
+<div class="topbar"><header class="top wrap"><a class="wm" href="./" aria-label="tapwater home">tap<span class="lt">water</span><svg viewBox="0 0 10 14" aria-hidden="true"><path d="M5 0C5 0 0 6.2 0 9a5 5 0 0 0 10 0C10 6.2 5 0 5 0Z"/></svg><sup class="tm">™</sup></a><nav><a href="./#features">Features</a><a href="./#stickers">Stickers</a><a href="support.html">Help</a><a class="nav-cta" href="./#stickers">Shop</a></nav></header></div>
+<main class="wrap start-page">
+  <span class="kicker" id="pack">Your sticker pack</span>
+  <h1>Welcome to the sticker club</h1>
+  <p>One tap. One glass. Your pack comes with a matching sticker inside the app, too.</p>
+  <img class="start-stk" id="stk" src="img/sticker-strawberry-milk.png" alt="" width="354" height="354">
+  <a class="btn" id="open" href="tapwater://start">Open in the app</a>
+  <p class="small">Already have tapwater™ on your phone? This adds your pack's sticker to your sticker book.</p>
+
+  <section class="start-box">
+    <h2>Get the app</h2>
+    <p>tapwater™ is coming soon for iPhone and Android. Once it's out, download it, then come back and scan the QR code on your pack card again to collect your sticker.</p>
+    <p><a class="btn" aria-disabled="true">Coming soon for iPhone and Android</a></p>
+  </section>
+
+  <section class="start-box">
+    <h2>Set up your bottle sticker</h2>
+    <ol>
+      <li>Stick it on your water bottle, near the top.</li>
+      <li>Open tapwater™, go to Settings and choose <b>Set up a sticker</b>.</li>
+      <li>Hold the top of your phone to the sticker until it says it's ready.</li>
+    </ol>
+    <p>That's it. From then on, tapping your phone to the sticker logs a glass. Make sure NFC is turned on in your phone's settings. <a href="support.html">More help</a></p>
+  </section>
+</main>
+<footer class="wrap"><span>© 2026 Tap Water. One tap. One glass.</span><nav><a href="privacy.html">Privacy</a><a href="support.html">Help</a><a href="./#stickers">Sticker shop</a><a href="giving.html">Giving</a></nav></footer>
+<script>
+// The QR code on each pack card is tapwaterapp.com/start?c=<colorway>.
+var PACKS = { 'strawberry-milk': 'Strawberry Milk', 'sea-glass': 'Sea Glass', 'matcha-latte': 'Matcha Latte', 'lavender-haze': 'Lavender Haze', 'peach-fizz': 'Peach Fizz', 'oat-milk': 'Oat Milk' };
+var STICKER_ART = { 'strawberry-milk': 1, 'sea-glass': 1 };
+var c = (new URLSearchParams(location.search).get('c') || '').toLowerCase();
+if (PACKS[c]) {
+  document.documentElement.setAttribute('data-cw', c);
+  document.getElementById('pack').textContent = PACKS[c] + ' pack';
+  document.getElementById('open').href = 'tapwater://start?c=' + c;
+  if (STICKER_ART[c]) document.getElementById('stk').src = 'img/sticker-' + c + '.png';
+}
+</script>
+</body></html>
