@@ -224,3 +224,22 @@ footer{max-width:1040px}
 .mini-cards.more{background:color-mix(in srgb,var(--soft) 55%,var(--main) 45%);border-radius:28px;padding:22px}
 .more-title{font:700 13px var(--body);letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);opacity:.75;margin:2px 4px 2px}
 @media (prefers-color-scheme:dark){.mini-cards.more{background:color-mix(in srgb,var(--nbg) 70%,var(--main) 30%)}}
+
+/* Tap, don't toss: the movement gets its own Tap Blue water panel at the bottom of the home page */
+section#dont-toss.toss{position:relative;background:linear-gradient(180deg,#2E9BE0,#1F7FC2);color:#fff;border-radius:32px;margin-block:40px 56px;padding:64px 48px 52px;overflow:hidden;text-align:center}
+.toss-wave{position:absolute;top:0;left:0;width:100%;height:46px;fill:rgba(255,255,255,.14)}
+.toss-in{position:relative;max-width:900px;margin-inline:auto}
+.toss-kicker{font:700 13px var(--body);letter-spacing:1.4px;text-transform:uppercase;opacity:.85}
+section.toss h2{font-size:clamp(44px,8vw,80px);font-weight:900;letter-spacing:-.045em;line-height:1;color:#fff;margin-block:10px 14px}
+.toss-lead{font-size:clamp(17px,2.2vw,20px);line-height:1.5;max-width:52ch;margin-inline:auto;opacity:.95}
+.toss-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px;text-align:left}
+.toss-stats div{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px}
+.toss-stats b{font:900 30px var(--logo);letter-spacing:-.03em}
+.toss-stats span{font-size:15px;line-height:1.45;opacity:.92}
+section.toss .community{justify-content:center;margin-top:26px}
+section.toss .community b{color:#fff}
+section.toss .community span{color:#fff;opacity:.9}
+.toss-btn{margin-top:28px;background:#fff;color:#1F7FC2;display:inline-block}
+@media (max-width:760px){section#dont-toss.toss{padding:52px 22px 40px;border-radius:26px}.toss-stats{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-color-scheme:dark){section.toss{background:linear-gradient(180deg,#14537E,#0D3A5A)}.toss-btn{color:#0D3A5A}}
+.community[hidden]{display:none}
