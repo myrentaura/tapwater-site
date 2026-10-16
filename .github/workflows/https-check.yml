@@ -3,17 +3,23 @@ name: HTTPS check
 on:
   push:
     branches: [https-check]
+permissions:
+  contents: write
 jobs:
   check:
+    if: "!contains(github.event.head_commit.message, 'results')"
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: DNS
         run: |
+          exec >> out.txt 2>&1
           for t in A AAAA CAA; do echo "== tapwaterapp.com $t"; dig +short tapwaterapp.com $t @1.1.1.1; done
           echo "== www CNAME"; dig +short www.tapwaterapp.com CNAME @1.1.1.1
           echo "== www A"; dig +short www.tapwaterapp.com A @1.1.1.1
       - name: Certificate
         run: |
+          exec >> out.txt 2>&1
           for h in tapwaterapp.com www.tapwaterapp.com; do
             echo "== $h"
             echo | openssl s_client -connect $h:443 -servername $h 2>/dev/null | openssl x509 -noout -subject -issuer -dates -ext subjectAltName || echo "no cert"
@@ -22,6 +28,11 @@ jobs:
           done
       - name: Each A record
         run: |
+          exec >> out.txt 2>&1
           for ip in $(dig +short tapwaterapp.com A @1.1.1.1); do
             echo "== $ip"; echo | openssl s_client -connect $ip:443 -servername tapwaterapp.com 2>/dev/null | openssl x509 -noout -subject -issuer -dates || echo "no cert"
           done
+      - name: Save results
+        run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add out.txt; git commit -m "results"; git push
