@@ -219,3 +219,8 @@ footer{max-width:1040px}
 .community span{color:var(--muted)}
 
 .free-note{display:inline-block;margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--ink)}
+
+/* "Other features" panel beside the colorways: a slightly deeper shade sets it apart */
+.mini-cards.more{background:color-mix(in srgb,var(--soft) 55%,var(--main) 45%);border-radius:28px;padding:22px}
+.more-title{font:700 13px var(--body);letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);opacity:.75;margin:2px 4px 2px}
+@media (prefers-color-scheme:dark){.mini-cards.more{background:color-mix(in srgb,var(--nbg) 70%,var(--main) 30%)}}
