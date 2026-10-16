@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&display=swap"><link rel="stylesheet" href="site.css">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,700;9..40,800;9..40,900&family=Fredoka:wght@600;700&family=Figtree:wght@400;600;700&family=Fraunces:ital,opsz,wght@1,9..144,900&display=swap"><link rel="stylesheet" href="site.css">
 <script>try{var c=localStorage.getItem('tapwater.cw');if(c)document.documentElement.dataset.cw=c}catch(e){}</script>
 <title>Tap Water: One-Tap Tracker</title>
 <meta name="description" content="The water tracker for people on the go. Log a refill with one tap on your phone, a reminder, or a sticker on your bottle.">
@@ -139,18 +139,33 @@
   </section>
 
   <section id="dont-toss" class="toss">
-    <svg class="toss-wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30c150-30 300 30 450 0s300-30 450 0 300 30 300 0V0H0Z"/></svg>
+    <div class="toss-waves" aria-hidden="true">
+      <svg class="w1" viewBox="0 0 2400 80" preserveAspectRatio="none"><path d="M0 40 C 150 10 300 10 450 40 S 750 70 900 40 S 1200 10 1350 40 S 1650 70 1800 40 S 2100 10 2250 40 S 2550 70 2700 40 V0 H0Z"/></svg>
+      <svg class="w2" viewBox="0 0 2400 80" preserveAspectRatio="none"><path d="M0 40 C 150 10 300 10 450 40 S 750 70 900 40 S 1200 10 1350 40 S 1650 70 1800 40 S 2100 10 2250 40 S 2550 70 2700 40 V0 H0Z"/></svg>
+      <svg class="w3" viewBox="0 0 2400 80" preserveAspectRatio="none"><path d="M0 40 C 150 10 300 10 450 40 S 750 70 900 40 S 1200 10 1350 40 S 1650 70 1800 40 S 2100 10 2250 40 S 2550 70 2700 40 V0 H0Z"/></svg>
+    </div>
+    <div class="toss-bubbles" aria-hidden="true"><i style="left:43%;--s:10px;--d:9.8s;--w:0.4s"></i><i style="left:70%;--s:8px;--d:9.6s;--w:0.5s"></i><i style="left:66%;--s:10px;--d:7.3s;--w:3.9s"></i><i style="left:10%;--s:10px;--d:7.6s;--w:3.8s"></i><i style="left:74%;--s:8px;--d:13.6s;--w:5.7s"></i><i style="left:76%;--s:8px;--d:11.0s;--w:3.6s"></i><i style="left:30%;--s:8px;--d:10.9s;--w:1.2s"></i><i style="left:55%;--s:10px;--d:10.8s;--w:5.1s"></i><i style="left:73%;--s:28px;--d:11.8s;--w:0.9s"></i><i style="left:75%;--s:22px;--d:8.3s;--w:0.9s"></i><i style="left:93%;--s:8px;--d:11.0s;--w:5.6s"></i><i style="left:65%;--s:22px;--d:10.7s;--w:7.0s"></i><i style="left:61%;--s:18px;--d:13.5s;--w:3.3s"></i><i style="left:33%;--s:28px;--d:8.3s;--w:7.0s"></i><i style="left:12%;--s:18px;--d:9.1s;--w:4.5s"></i><i style="left:45%;--s:22px;--d:10.1s;--w:5.5s"></i><i style="left:11%;--s:8px;--d:10.6s;--w:1.5s"></i><i style="left:45%;--s:10px;--d:13.5s;--w:3.8s"></i></div>
     <div class="toss-in">
-      <p class="toss-kicker">the tapwater™ movement</p>
-      <h2>Tap, don't toss.</h2>
-      <p class="toss-lead">Every refill you log is a plastic bottle you didn't buy. And every sticker pack helps bring clean water to people in the US who still don't have it.</p>
+      <div class="toss-top">
+        <div class="toss-copy">
+          <p class="toss-kicker">the tapwater™ movement</p>
+          <h2>Tap,<br><em>don't toss.</em></h2>
+          <p class="toss-lead">Your cute bottle is doing more than you think. Every refill you log is a plastic bottle you didn't buy, and every sticker pack helps bring clean water to people in the US who still don't have it.</p>
+        </div>
+        <div class="toss-art" aria-hidden="true">
+          <img class="toss-bottle" data-cwimg="img/bottles/{cw}-straw.webp" src="img/bottles/strawberry-milk-straw.webp" alt="" width="380" height="1053" loading="lazy">
+          <img class="toss-stk s1" data-cwimg="img/stickers/{cw}-skip-10.webp" src="img/stickers/strawberry-milk-skip-10.webp" alt="" width="360" height="360" loading="lazy">
+          <img class="toss-stk s2" data-cwimg="img/stickers/{cw}-skip-250.webp" src="img/stickers/strawberry-milk-skip-250.webp" alt="" width="360" height="360" loading="lazy">
+          <img class="toss-stk s3" data-cwimg="img/stickers/{cw}-skip-500.webp" src="img/stickers/strawberry-milk-skip-500.webp" alt="" width="360" height="360" loading="lazy">
+        </div>
+      </div>
       <div class="toss-stats">
-        <div><b>16.9 oz</b><span>logged counts as one plastic bottle skipped. The app keeps your running count.</span></div>
-        <div><b>$1</b><span>from every sticker pack ($2 from the Squad pack) goes to a US clean water nonprofit.</span></div>
-        <div><b>Receipts</b><span>for every donation, posted on our giving page each quarter.</span></div>
+        <div><b>16.9 oz</b><span>logged = one plastic bottle skipped, counted in the app</span></div>
+        <div><b>$1</b><span>from every sticker pack ($2 from the Squad pack) to a US clean water nonprofit</span></div>
+        <div><b>Quarterly</b><span>donation receipts, posted for everyone to see</span></div>
       </div>
       <div class="community" data-community hidden><b data-bottles></b><span>plastic bottles skipped by tapwater™ sippers so far</span></div>
-      <a class="btn toss-btn" href="giving.html">See our giving record</a>
+      <div class="toss-ctas"><a class="btn toss-btn" href="giving.html">See our giving record</a><a class="btn toss-ghost" href="#stickers">Get a sticker pack</a></div>
     </div>
   </section>
 </main>
@@ -174,6 +189,7 @@
     var pack = cw === 'sea-glass' ? 'sea-glass' : 'strawberry-milk';
     document.querySelectorAll('img[data-flat]').forEach(function (img) { img.src = 'img/flatlay-' + pack + '.jpg'; });
     document.querySelectorAll('img[data-stk]').forEach(function (img) { img.src = 'img/sticker-' + pack + '.png'; });
+    document.querySelectorAll('img[data-cwimg]').forEach(function (img) { img.src = img.dataset.cwimg.replace('{cw}', cw); });
     document.querySelectorAll('img[data-book]').forEach(function (img) { img.src = 'img/stickers/' + cw + '-' + img.dataset.book + '.png'; });
     if (save) try { localStorage.setItem('tapwater.cw', cw); } catch (e) {}
   }

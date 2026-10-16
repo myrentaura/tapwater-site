@@ -225,21 +225,52 @@ footer{max-width:1040px}
 .more-title{font:700 13px var(--body);letter-spacing:1.2px;text-transform:uppercase;color:var(--ink);opacity:.75;margin:2px 4px 2px}
 @media (prefers-color-scheme:dark){.mini-cards.more{background:color-mix(in srgb,var(--nbg) 70%,var(--main) 30%)}}
 
-/* Tap, don't toss: the movement gets its own Tap Blue water panel at the bottom of the home page */
-section#dont-toss.toss{position:relative;background:linear-gradient(180deg,#2E9BE0,#1F7FC2);color:#fff;border-radius:32px;margin-block:40px 56px;padding:64px 48px 52px;overflow:hidden;text-align:center}
-.toss-wave{position:absolute;top:0;left:0;width:100%;height:46px;fill:rgba(255,255,255,.14)}
-.toss-in{position:relative;max-width:900px;margin-inline:auto}
-.toss-kicker{font:700 13px var(--body);letter-spacing:1.4px;text-transform:uppercase;opacity:.85}
-section.toss h2{font-size:clamp(44px,8vw,80px);font-weight:900;letter-spacing:-.045em;line-height:1;color:#fff;margin-block:10px 14px}
-.toss-lead{font-size:clamp(17px,2.2vw,20px);line-height:1.5;max-width:52ch;margin-inline:auto;opacity:.95}
-.toss-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px;text-align:left}
-.toss-stats div{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:6px}
-.toss-stats b{font:900 30px var(--logo);letter-spacing:-.03em}
-.toss-stats span{font-size:15px;line-height:1.45;opacity:.92}
-section.toss .community{justify-content:center;margin-top:26px}
-section.toss .community b{color:#fff}
-section.toss .community span{color:#fff;opacity:.9}
-.toss-btn{margin-top:28px;background:#fff;color:#1F7FC2;display:inline-block}
-@media (max-width:760px){section#dont-toss.toss{padding:52px 22px 40px;border-radius:26px}.toss-stats{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-color-scheme:dark){section.toss{background:linear-gradient(180deg,#14537E,#0D3A5A)}.toss-btn{color:#0D3A5A}}
 .community[hidden]{display:none}
+
+/* Tap, don't toss: the movement gets a grand, edge-to-edge water section at the bottom of the home page */
+html,body{overflow-x:clip}
+section#dont-toss.toss{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-block:56px 0;padding:150px 16px 120px;overflow:hidden;text-align:center;color:#fff;
+  background:radial-gradient(120% 70% at 50% 0%,#7FD6FF 0%,rgba(127,214,255,0) 60%),linear-gradient(180deg,#3FB2F0 0%,#2E9BE0 35%,#1C74B8 75%,#125A94 100%)}
+.toss-waves{position:absolute;top:-1px;left:0;right:0;height:90px;pointer-events:none}
+.toss-waves svg{position:absolute;top:0;left:0;width:200%;height:100%;animation:toss-drift 18s linear infinite}
+.toss-waves .w1 path{fill:var(--cream)}
+.toss-waves .w2{opacity:.5;animation-duration:26s;animation-direction:reverse;top:10px}
+.toss-waves .w2 path,.toss-waves .w3 path{fill:#fff}
+.toss-waves .w3{opacity:.22;animation-duration:34s;top:22px}
+@keyframes toss-drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.toss-bubbles{position:absolute;inset:0;pointer-events:none}
+.toss-bubbles i{position:absolute;bottom:-40px;width:var(--s);height:var(--s);border-radius:50%;border:1.5px solid rgba(255,255,255,.55);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.55),rgba(255,255,255,.08) 60%);animation:toss-rise var(--d) ease-in infinite;animation-delay:var(--w);opacity:0}
+@keyframes toss-rise{0%{transform:translateY(0);opacity:0}10%{opacity:.9}90%{opacity:.6}100%{transform:translateY(-760px) translateX(14px);opacity:0}}
+.toss-in{position:relative;max-width:980px;margin-inline:auto}
+.toss-kicker{font:700 14px var(--body);letter-spacing:2px;text-transform:uppercase;opacity:.9}
+section#dont-toss.toss h2{font-size:clamp(64px,13vw,150px);font-weight:900;letter-spacing:-.055em;line-height:.92;color:#fff;margin-block:14px 22px;text-shadow:0 10px 40px rgba(10,60,110,.25)}
+.toss-lead{font-size:clamp(18px,2.4vw,23px);line-height:1.5;max-width:46ch;margin-inline:auto;opacity:.96}
+.toss-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:52px;border-top:1px solid rgba(255,255,255,.3);border-bottom:1px solid rgba(255,255,255,.3)}
+.toss-stats div{padding:28px 22px;display:flex;flex-direction:column;gap:8px}
+.toss-stats div+div{border-left:1px solid rgba(255,255,255,.3)}
+.toss-stats b{font:900 clamp(34px,4.6vw,52px) var(--logo);letter-spacing:-.04em;line-height:1}
+.toss-stats span{font-size:15px;line-height:1.45;opacity:.92;max-width:26ch;margin-inline:auto}
+section#dont-toss.toss .community{justify-content:center;margin-top:30px}
+section#dont-toss.toss .community b{color:#fff}
+section#dont-toss.toss .community span{color:#fff;opacity:.9}
+.toss-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:38px}
+.toss-btn{background:#fff;color:#155E99}
+.toss-ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.8)}
+@media (max-width:760px){section#dont-toss.toss{padding:120px 20px 90px}.toss-stats{grid-template-columns:minmax(0,1fr)}.toss-stats div+div{border-left:0;border-top:1px solid rgba(255,255,255,.3)}}
+@media (prefers-color-scheme:dark){section#dont-toss.toss{background:radial-gradient(120% 70% at 50% 0%,#1E6FA6 0%,rgba(30,111,166,0) 60%),linear-gradient(180deg,#165B8C,#0C3A5E 70%,#082A45)}.toss-btn{color:#0C3A5E}}
+@media (prefers-reduced-motion:reduce){.toss-waves svg,.toss-bubbles i{animation:none}.toss-bubbles{display:none}}
+
+/* Maya touches on Tap, don't toss: boutique italic serif, her dressed-up bottle, and the bottles-skipped stickers */
+.toss-top{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:center;text-align:left}
+section#dont-toss.toss .toss-top h2{font-size:clamp(64px,11vw,132px)}
+section#dont-toss.toss h2 em{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:900;letter-spacing:-.03em;font-variation-settings:'opsz' 144;color:#FFF3C4;display:inline-block;transform:rotate(-2deg);padding-right:.08em}
+.toss-copy .toss-lead{margin-inline:0}
+.toss-art{position:relative;height:520px}
+.toss-bottle{position:absolute;left:50%;top:0;height:100%;width:auto;transform:translateX(-50%) rotate(4deg);filter:drop-shadow(0 30px 40px rgba(8,50,95,.35));animation:toss-bob 6s ease-in-out infinite}
+.toss-stk{position:absolute;width:150px;height:auto;filter:drop-shadow(0 12px 18px rgba(8,50,95,.3))}
+.toss-stk.s1{left:-2%;top:22%;width:178px;transform:rotate(-10deg)}
+.toss-stk.s2{right:-4%;top:6%;transform:rotate(9deg)}
+.toss-stk.s3{right:2%;bottom:6%;width:140px;transform:rotate(-6deg)}
+@keyframes toss-bob{0%,100%{transform:translateX(-50%) rotate(4deg) translateY(0)}50%{transform:translateX(-50%) rotate(3deg) translateY(-10px)}}
+@media (max-width:760px){.toss-top{grid-template-columns:minmax(0,1fr);text-align:center}.toss-copy .toss-lead{margin-inline:auto}.toss-art{height:400px;max-width:340px;width:100%;margin-inline:auto}.toss-stk{width:112px}.toss-stk.s1{width:130px}}
+@media (prefers-reduced-motion:reduce){.toss-bottle{animation:none}}
