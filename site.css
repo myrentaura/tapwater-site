@@ -127,6 +127,7 @@ footer nav{font-weight:600}
 .band .price-tag{background:var(--main);color:var(--deep);border-radius:20px;padding:14px 20px;font-weight:700;text-align:center}
 .band .price-tag b{font:700 34px var(--display)}
 .band .price-tag span{font-size:13px;font-weight:600}
+.band .band-btn{margin-top:16px;background:#fff;color:var(--deep);display:inline-block}
 .band .band-note{grid-column:1/-1;color:#fff;opacity:.75}
 @media (max-width:760px){.band{grid-template-columns:minmax(0,1fr);padding:24px}.band .price-tag{justify-self:start}}
 @media (prefers-color-scheme:dark){.band{background:var(--surface)}}
@@ -215,3 +216,5 @@ footer{max-width:1040px}
 .community{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-top:18px}
 .community b{font-family:'DM Sans',sans-serif;font-weight:900;font-size:clamp(36px,6vw,56px);color:var(--ink);letter-spacing:-.02em}
 .community span{color:var(--muted)}
+
+.free-note{display:inline-block;margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;color:var(--ink)}
