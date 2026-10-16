@@ -1,0 +1,53 @@
+== tapwaterapp.com A
+185.199.111.153
+185.199.108.153
+185.199.110.153
+185.199.109.153
+== tapwaterapp.com AAAA
+== tapwaterapp.com CAA
+== www CNAME
+myrentaura.github.io.
+== www A
+myrentaura.github.io.
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+== tapwaterapp.com
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:tapwaterapp.com, DNS:www.tapwaterapp.com
+curl https://tapwaterapp.com -> 200 
+curl http://tapwaterapp.com -> 301 https://tapwaterapp.com/
+== www.tapwaterapp.com
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
+X509v3 Subject Alternative Name: 
+    DNS:tapwaterapp.com, DNS:www.tapwaterapp.com
+curl https://www.tapwaterapp.com -> 301 https://tapwaterapp.com/
+curl http://www.tapwaterapp.com -> 301 https://tapwaterapp.com/
+== 185.199.111.153
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
+== 185.199.108.153
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
+== 185.199.110.153
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
+== 185.199.109.153
+subject=CN = tapwaterapp.com
+issuer=C = US, O = Let's Encrypt, CN = YR1
+notBefore=Oct 16 20:05:19 2026 GMT
+notAfter=Jan 14 20:05:18 2027 GMT
