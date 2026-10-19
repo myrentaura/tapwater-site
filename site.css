@@ -274,3 +274,9 @@ section#dont-toss.toss h2 em{font-family:'Fraunces',Georgia,serif;font-style:ita
 @keyframes toss-bob{0%,100%{transform:translateX(-50%) rotate(4deg) translateY(0)}50%{transform:translateX(-50%) rotate(3deg) translateY(-10px)}}
 @media (max-width:760px){.toss-top{grid-template-columns:minmax(0,1fr);text-align:center}.toss-copy .toss-lead{margin-inline:auto}.toss-art{height:400px;max-width:340px;width:100%;margin-inline:auto}.toss-stk{width:112px}.toss-stk.s1{width:130px}}
 @media (prefers-reduced-motion:reduce){.toss-bottle{animation:none}}
+/* Tighter gaps between home page sections */
+section.block{margin-block:28px;padding-block:56px}
+section#book{padding-block:32px}
+section#stickers{padding-block:16px}
+section#dont-toss.toss{margin-block:32px 0}
+@media (max-width:760px){section.block{margin-block:20px;padding-block:44px}section#book{padding-block:24px}}
