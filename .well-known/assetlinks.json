@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tapwater.onetap",
+      "sha256_cert_fingerprints": ["85:90:CB:62:85:65:5C:85:3D:11:66:AA:C6:03:A0:C1:46:45:3A:5A:DB:8E:D9:BE:42:99:5C:6C:C5:D7:6E:8C"]
+    }
+  }
+]
