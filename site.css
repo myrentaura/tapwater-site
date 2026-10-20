@@ -30,7 +30,7 @@ nav{display:flex;gap:18px;flex-wrap:wrap;font-weight:700;font-size:15px}
 nav a{text-decoration:none}
 .wm{font-family:var(--logo);font-weight:900;letter-spacing:-.06em;line-height:1;white-space:nowrap;text-decoration:none;color:var(--ink)}
 /* "tap" a touch bolder than "water": a very thin same-color outline (.008em), the same as the packaging wordmark. */
-.wm{-webkit-text-stroke:.008em currentColor;paint-order:stroke fill;font-optical-sizing:none}
+.wm{-webkit-text-stroke:.008em currentColor;paint-order:stroke fill;font-variation-settings:'opsz' 14}
 .wm .lt,.wm .tm{-webkit-text-stroke:0}
 .wm .lt{font-weight:700}
 .wm svg{display:inline-block;width:.2em;height:.28em;margin-left:.04em;vertical-align:baseline;overflow:visible}
