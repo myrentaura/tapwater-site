@@ -33,7 +33,7 @@ nav a{text-decoration:none}
 .wm{-webkit-text-stroke:.008em currentColor;paint-order:stroke fill}
 .wm .lt,.wm .tm{-webkit-text-stroke:0}
 .wm .lt{font-weight:700}
-.wm svg{display:inline-block;width:.2em;height:.28em;margin-left:.04em;vertical-align:baseline}
+.wm svg{display:inline-block;width:.2em;height:.28em;margin-left:.04em;vertical-align:baseline;overflow:visible}
 .wm svg path{fill:var(--tapblue)}
 .wm .tm{font-family:var(--body,sans-serif);font-weight:600;font-size:.32em;letter-spacing:0;vertical-align:top;margin-left:.08em;position:relative;top:.15em}
 header .wm{font-size:28px}
