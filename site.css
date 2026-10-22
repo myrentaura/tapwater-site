@@ -283,3 +283,12 @@ section#book{padding-block:32px}
 section#stickers{padding-block:16px}
 section#dont-toss.toss{margin-block:32px 0}
 @media (max-width:760px){section.block{margin-block:20px;padding-block:44px}section#book{padding-block:24px}}
+
+/* Maya photo band (licensed free photo, credit in footer) */
+.maya-band{position:relative;padding:0;width:100vw;margin-left:calc(50% - 50vw);margin-block:28px;background:#FFB3BC;overflow:hidden}
+.maya-band img{display:block;width:100%;height:auto;max-height:560px;object-fit:cover;object-position:75% 30%}
+.maya-copy{position:absolute;left:max(24px,calc(50% - 520px));top:50%;transform:translateY(-50%);max-width:46%}
+.maya-big{font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:900;font-variation-settings:'opsz' 144;font-size:clamp(44px,6.4vw,92px);line-height:.98;letter-spacing:-.03em;color:#6B1F43;margin:0}
+.maya-kick{font:700 13px var(--body);letter-spacing:.28em;text-transform:uppercase;color:#6B1F43;margin-top:18px}
+footer .credit{color:inherit;opacity:.8;margin-left:6px}
+@media (max-width:760px){.maya-band img{max-height:none;aspect-ratio:924/1000;object-position:center top}.maya-copy{position:static;transform:none;max-width:none;padding:24px 20px 28px;background:#FFB3BC}}
