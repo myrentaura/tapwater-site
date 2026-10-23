@@ -293,3 +293,7 @@ section#dont-toss.toss{margin-block:32px 0}
 footer .credit{color:inherit;opacity:.8;margin-left:6px}
 @media (max-width:760px){.maya-band img{max-height:none;aspect-ratio:924/1000;object-position:center top}.maya-copy{position:static;transform:none;max-width:none;padding:24px 20px 28px;background:#FFB3BC}}
 
+/* Second photo band, lower on the page: same look, the pink matched to this photo. */
+.maya-band.smile{background:#FDA3AC;margin-block:56px}
+.maya-band.smile img{object-position:70% 30%}
+@media (max-width:760px){.maya-band.smile .maya-copy{background:#FDA3AC}}
