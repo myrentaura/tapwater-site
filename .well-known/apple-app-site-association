@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.com.tapwater.onetap"],
+        "appIDs": ["9P8WH73SLC.com.tapwater.onetap"],
         "components": [{ "/": "/log*" }, { "/": "/cheer*" }, { "/": "/friend*" }, { "/": "/start*" }]
       }
     ]
