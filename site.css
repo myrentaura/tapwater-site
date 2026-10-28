@@ -14,7 +14,7 @@
 :root[data-cw="lavender-haze"]{--main:#CDBDF2;--soft:#F1ECFC;--deep:#3D2E7A;--shade:#A996E3;--pop:#FFD1E1;--nbg:#120E22;--nsurf:#211A3A;--nink:#F1ECFC}
 :root[data-cw="oat-milk"]{--main:#E3CDB2;--soft:#F8F2EA;--deep:#4A3022;--shade:#C9A988;--pop:#F4C9BA;--nbg:#1A130E;--nsurf:#2A2019;--nink:#F8F2EA}
 :root[data-cw="peach-fizz"]{--main:#FFC98F;--soft:#FFF1E2;--deep:#6A3510;--shade:#F0A35E;--pop:#FFF3B0;--nbg:#1E120A;--nsurf:#2F1F14;--nink:#FFF1E2}
-:root[data-cw="cold-brew"]{--main:#9A7862;--soft:#F2ECE6;--deep:#2B1C14;--shade:#8E6F57;--pop:#E8C27E;--nbg:#140E0B;--nsurf:#231A15;--nink:#F2ECE6}
+:root[data-cw="cold-brew"]{--main:#9A7862;--soft:#DCC8B6;--deep:#1E130D;--shade:#6E523F;--pop:#E8C27E;--nbg:#140E0B;--nsurf:#231A15;--nink:#EADFD5}
 :root[data-cw="club-soda"]{--main:#A9BACB;--soft:#EAEFF4;--deep:#1C2A38;--shade:#7D91A6;--pop:#F2D59A;--nbg:#0D1218;--nsurf:#19222C;--nink:#EAEFF4}
 @media (prefers-color-scheme:dark){
   :root{--tapblue:#5CC8FF;--bg:var(--nbg);--surface:var(--nsurf);--ink:var(--nink);--on-ink:var(--deep);color-scheme:dark}
